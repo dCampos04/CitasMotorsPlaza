@@ -1,0 +1,174 @@
+
+<section>
+  <div id="profile" class="px-6 py-6  text-center">
+
+    <a class="inline-flex space-x-2 items-center">
+      <span>
+        <img class="w-24 h-24 mt-3" src="/img/LogoProv.png" alt="logo">
+      </span>
+    </a>
+  </div>
+</section>
+
+<section>
+  <div id="nav" class="w-full px-4">
+
+    <a
+      (click)="changeToggleServices()"
+      class="w-full px-5 inline-flex space-x-5 items-center py-3 hover:bg-white/5 transition ease-linear duration-150 cursor-pointer"
+    >
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+        </svg>
+
+      </div>
+      <div class="flex ">
+        <span class="text-lg font-bold leading-5 text-white"> Servicios </span>
+
+        @if (toggleServices) {
+          <svg class="ml-5 h-5 w-10 text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.75a.75.75 0 01-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z" clip-rule="evenodd" />
+          </svg>
+
+        } @else {
+          <svg class="ml-5 h-5 w-10 text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+          </svg>
+        }
+
+
+
+      </div>
+
+    </a>
+
+
+    @if (toggleServices){
+      <hr class="my-2 -mt-0.5">
+      <a
+        [routerLink]="['/admin-view/admin-categories']"
+        routerLinkActive="active-link"
+        (click)="closeToggleUsers()"
+        class="w-full px-16 inline-flex space-x-2 items-center py-3 hover:bg-white/5 transition ease-linear duration-150"
+      >
+        <div class="flex flex-col">
+          <span class="text-lg font-bold leading-5 text-white"> Categorías </span>
+        </div>
+      </a>
+      <a
+        [routerLink]="['/admin-view/admin-services']"
+        routerLinkActive="active-link"
+        (click)="closeToggleUsers()"
+        class="w-full px-16 inline-flex space-x-2 items-center py-3 hover:bg-white/5 transition ease-linear duration-150"
+      >
+        <div class="flex flex-col">
+          <span class="text-lg font-bold leading-5 text-white"> Servicios </span>
+        </div>
+      </a>
+    }
+
+    <a
+      (click)="changeToggleUsers()"
+      class="mt-4 w-full px-5 inline-flex space-x-5 items-center py-3 hover:bg-white/5 transition ease-linear duration-150 cursor-pointer"
+    >
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+        </svg>
+
+      </div>
+      <div class="flex">
+        <span class="text-lg font-bold leading-5 text-white"> Usuarios </span>
+      </div>
+
+      @if (toggleUsers) {
+        <svg class="ml-5 h-5 w-10 text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.75a.75.75 0 01-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z" clip-rule="evenodd" />
+        </svg>
+
+      } @else {
+        <svg class="ml-5 h-5 w-10 text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+        </svg>
+      }
+
+    </a>
+
+    @if (toggleUsers){
+      <hr class="my-2 -mt-0.5">
+      <a
+        [routerLink]="['/admin-view/admin-places']"
+        routerLinkActive="active-link"
+        (click)="closeToggleServices()"
+        class="w-full px-16 inline-flex space-x-2 items-center py-3 hover:bg-white/5 transition ease-linear duration-150"
+      >
+        <div class="flex flex-col">
+          <span class="text-lg font-bold leading-5 text-white"> Locales </span>
+        </div>
+      </a>
+      <a
+        [routerLink]="['/admin-view/admin-roles']"
+        routerLinkActive="active-link"
+        (click)="closeToggleServices()"
+        class="w-full px-16 inline-flex space-x-2 items-center py-3 hover:bg-white/5 transition ease-linear duration-150"
+      >
+        <div class="flex flex-col">
+          <span class="text-lg font-bold leading-5 text-white"> Roles </span>
+        </div>
+      </a>
+      <a
+        [routerLink]="['/admin-view/admin-users']"
+        routerLinkActive="active-link"
+        (click)="closeToggleServices()"
+        class="w-full px-16 inline-flex space-x-2 items-center py-3 hover:bg-white/5 transition ease-linear duration-150"
+      >
+        <div class="flex flex-col">
+          <span class="text-lg font-bold leading-5 text-white"> Usuarios </span>
+        </div>
+      </a>
+    }
+
+
+    <a
+      [routerLink]="['/admin-view/admin-config']"
+      routerLinkActive="active-link"
+      (click)="closeAll()"
+      class="mt-4 w-full px-5 inline-flex space-x-5 items-center py-3 hover:bg-white/5 transition ease-linear duration-150"
+    >
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+        </svg>
+
+      </div>
+      <div class="flex flex-col">
+        <span class="text-lg font-bold leading-5 text-white"> Configuración </span>
+      </div>
+    </a>
+
+    <a
+      [routerLink]="['/admin-view/admin-calendar']"
+      routerLinkActive="active-link"
+      (click)="closeAll()"
+      class="mt-4 w-full px-5 inline-flex space-x-5  items-center py-3 hover:bg-white/5 transition ease-linear duration-150"
+    >
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+        </svg>
+
+      </div>
+      <div class="flex flex-col">
+        <span class="text-lg font-bold leading-5 text-white "> Agenda</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+
+
+
+
+

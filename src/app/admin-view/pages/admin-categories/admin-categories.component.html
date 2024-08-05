@@ -1,0 +1,223 @@
+<section id="menu" class="h-32 z-10 text-slate-300 w-full bg-white flex items-center justify-end px-5">
+  <button
+    class="text-black font-bold text-lg flex flex-col items-center py-2 px-5 rounded-xl mr-6"
+    style="background: #ebebeb"
+    (click)="openModalCreateCategorie()"
+  >
+    <h1 class="text-3xl" >+</h1>
+    <h1 class="-mt-2">CAT</h1>
+  </button>
+</section>
+
+
+
+<section class="px-36 py-20 w-full">
+  <div class="w-full rounded-2xl bg-white" style="height: 70dvh">
+    <div class="w-full">
+      <div
+        class="text-white text-2xl rounded-t-2xl font-semibold py-6 text-start px-10"
+        style="width: 100%; background: #df0612">
+        Listado de Categorías
+      </div>
+
+
+
+      <div class="w-full mt-4 px-12">
+
+        <div class="w-full">
+          <div class="w-full py-5">
+            <div class="flex items-center space-x-6">
+              <h3 class="text-lg font-semibold" style="color: #9a9696">Filtrar por:</h3>
+
+              <select
+                class="text-lg w-56 border border-gray-300 rounded-xl px-3 py-1 focus:outline-none focus:border-gray-500 cursor-pointer"
+                style="background: #f3f3f3"
+              >
+                <option value="" disabled selected >Nombre</option>
+                <option value="marca1">Nombre 1</option>
+                <option value="marca2">Nombre 2</option>
+                <option value="marca3">Nombre 3</option>
+              </select>
+
+              <input
+                type="text"
+                placeholder=""
+                class="text-lg w-56 border border-gray-300 rounded-xl px-3 py-1 focus:outline-none focus:border-gray-500"
+                style="background: #f3f3f3"
+              >
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- Tabla -->
+        <table class="w-full border-collapse">
+          <thead>
+          <tr>
+            <th class="py-1 px-4 text-left " style="width: 10%; color: #9a9696">#</th>
+            <th class="py-1 px-4 text-left " style="width: 80%; color: #9a9696">Nombre</th>
+            <th class="py-1 px-4 text-left " style="width: 10%; color: #9a9696">Acciones</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td class="font-semibold text-black text-xl py-1 px-4">1</td>
+            <td class="font-semibold text-black text-xl py-1 px-4">Mantenimiento</td>
+            <td class="py-1 px-4 flex space-x-2">
+              <img class="w-8 h-8 cursor-pointer" (click)="openModalEditCategorie()" src="/img/iconoEditar.png" alt="editar">
+              <img class="w-8 h-8 cursor-pointer" (click)="openModalDeleteCategorie()" src="/img/iconoBorrar.png" alt="borrar">
+            </td>
+          </tr>
+
+<!--          <tr>-->
+<!--            <td class="font-semibold text-black text-xl py-1 px-4">2</td>-->
+<!--            <td class="font-semibold text-black text-xl py-1 px-4">Enfiramiento de caderas acurrucu cu </td>-->
+<!--            <td class="py-1 px-4 flex space-x-2">-->
+<!--              <img class="w-8 h-8 " src="/img/iconoEditar.png" alt="editar">-->
+<!--              <img class="w-8 h-8 " src="/img/iconoBorrar.png" alt="borrar">-->
+<!--            </td>-->
+<!--          </tr>-->
+          <!-- Más filas si es necesario -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+@if(modalNewCategorie){
+  <div class="fixed flex top-0 right-0 w-full h-full bg-gray-900 bg-opacity-70 justify-center items-center z-50">
+    <div class="relative bg-white rounded-2xl p-10 w-[32pc] h-[18pc]">
+
+      <button class="absolute top-2 right-2 mt-2 mr-3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5 hover:text-gray-800"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          style="color: #919191"
+          (click)="closeModalCreateCategorie()"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <h3 class="text-2xl mb-4 font-semibold text-center text-black">Nueva Categoría</h3>
+
+      <h3 class="text-lg font-semibold text-start mb-2" style="color: #787373">Nombre <span style="color: #e00612">*</span></h3>
+
+      <input
+        type="text"
+        placeholder=""
+        class="text-lg w-full border border-gray-300 rounded-xl px-3 py-2 focus:outline-none focus:border-gray-500 mb-4"
+        style="background: #f3f3f3"
+      >
+
+      <div class="flex items-center justify-center mr-24 ml-24">
+        <button
+          type="button"
+          class="text-white text-xl rounded-xl px-14 py-2 font-semibold inline-block mt-3"
+          style="background: #e00612"
+          (click)="createCategorie()"
+        >
+          Guardar
+        </button>
+      </div>
+    </div>
+  </div>
+}
+
+
+@if(modalEditCategorie){
+  <div class="fixed flex top-0 right-0 w-full h-full bg-gray-900 bg-opacity-70 justify-center items-center z-50">
+    <div class="relative bg-white rounded-2xl p-10 w-[32pc] h-[18pc]">
+
+      <button class="absolute top-2 right-2 mt-2 mr-3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5 hover:text-gray-800"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          style="color: #919191"
+          (click)="closeModalEditCategorie()"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <h3 class="text-2xl mb-4 font-semibold text-center text-black">Editar Categoría</h3>
+
+      <h3 class="text-lg font-semibold text-start mb-2" style="color: #787373">Nombre <span style="color: #e00612">*</span></h3>
+
+      <input
+        type="text"
+        placeholder="Mantenimiento"
+        class="text-lg w-full border border-gray-300 rounded-xl px-3 py-2 focus:outline-none focus:border-gray-500 mb-4"
+        style="background: #f3f3f3"
+      >
+
+      <div class="flex items-center justify-center mr-24 ml-24">
+        <button
+          type="button"
+          class="text-white text-xl rounded-xl px-14 py-2 font-semibold inline-block mt-3"
+          style="background: #e00612"
+          (click)="editCategorie()"
+        >
+          Guardar
+        </button>
+      </div>
+    </div>
+  </div>
+}
+
+
+
+
+@if(modalDeleteCategorie){
+  <div class="fixed flex top-0 right-0 w-full h-full bg-gray-900 bg-opacity-70 justify-center items-center z-50">
+    <div class="relative bg-white rounded-2xl p-10 w-[32pc] h-[12pc]">
+
+      <button class="absolute items-center top-2 right-2 mt-2 mr-3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5 hover:text-gray-800"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          style="color: #919191"
+          (click)="closeModalDeleteCategorie()"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <h3 class="text-2xl mb-4 font-semibold text-center text-black">¿Seguro que desea Eliminar?</h3>
+
+      <div class="flex justify-center space-x-8 mt-6">
+        <button
+          type="button"
+          class="text-white text-xl rounded-xl px-20 py-2 font-semibold inline-block mt-3  bg-[#e00612]"
+          (click)="closeModalDeleteCategorie()"
+        >
+          No
+        </button>
+
+        <button
+          type="button"
+          class="text-black text-xl border-2 border-[#9f9c9c] rounded-xl px-20 py-2 font-semibold inline-block mt-3 hover:bg-[#9f9c9c] hover:text-white"
+          (click)="deleteCategorie()"
+        >
+          Si
+        </button>
+      </div>
+    </div>
+  </div>
+}
+
